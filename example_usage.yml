@@ -1,0 +1,32 @@
+#
+# Example usage in an action for testing
+#
+
+# name: Main action
+
+# on:
+#   push:
+#     branches:
+#       - master
+
+# env:
+#   AIRBRAKE_PROJECT_ID: 123456
+#   AIRBRAKE_ENVIRONMENT: production
+
+# jobs:
+#   hello_world_job:
+#     runs-on: ubuntu-latest
+#     name: Create an Airbrake Deploy
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Create deploy
+#         uses: ./
+#         id: airbrake-deploy
+#         with:
+#           project-key: ${{ secrets.AIRBRAKE_PROJECT_KEY }}
+#           repository: https://github.com${{ github.repo }}
+#           revision: ${{ github.sha }}
+#           user: ${{ github.actor }}
+#       - name: Get the deploy response
+#         run: echo "The response was ${{ steps.airbrake-deploy.outputs.response }}"

@@ -1,0 +1,44 @@
+# action.yml
+name: "Airbrake Deploy"
+description: "Create a Deploy for an Airbrake Project"
+branding:
+  icon: anchor
+  color: gray-dark
+inputs:
+  project-id:
+    description: "Airbrake Project ID"
+    required: true
+    default: ""
+  project-key:
+    description: "Airbrake Project Key"
+    required: true
+    default: ""
+  environment:
+    description: "Airbrake Deploy Environment"
+    required: true
+    default: ""
+  repository:
+    description: "Airbrake Repository"
+    required: true
+    default: ""
+  revision:
+    description: "Airbrake Deploy Revision"
+    required: true
+    default: ""
+  user:
+    description: "Airbrake Deploy User"
+    required: true
+    default: ""
+outputs:
+  response:
+    description: "The API response for creating a deploy"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.project-id }}
+    - ${{ inputs.project-key }}
+    - ${{ inputs.environment }}
+    - ${{ inputs.repository }}
+    - ${{ inputs.revision }}
+    - ${{ inputs.user }}
