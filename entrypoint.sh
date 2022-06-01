@@ -27,7 +27,7 @@ usage() {
   exit 1
 }
 
-if [ -z "$PROJECT_ID" ] || [ -z "$PROJECT_KEY" ] || [ -z "$ENVIRONMENT" ] || [ -z "$REPOSITORY" ] || [ -z "$DEPLOY_USER" ]; then
+if [ -z "$PROJECT_ID" ] || [ -z "$PROJECT_KEY" ] || [ -z "$ENVIRONMENT" ] || [ -z "$REPOSITORY" ] || [ -z "$COMMIT_SHA" ] || [ -z "$DEPLOY_USER" ]; then
   echo "Missing required arguments!"
   usage
   exit 1
@@ -36,4 +36,4 @@ fi
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{"environment":"'"${ENVIRONMENT}"'","username":"'"${DEPLOY_USER}"'","repository":"'"${REPOSITORY}"'","revision":"'"${COMMIT_SHA}"'"}' \
-  "https://airbrake.io/api/v4/projects/${PROJECT_ID}/deploys?key=${PROJECT_KEY}"
+  "https://airbrake.io/api/v4/projects/${PROJECT_ID}/deploys?key=${PROJECT_KEY}" || exit 1
