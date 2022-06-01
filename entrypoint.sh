@@ -35,5 +35,5 @@ fi
 
 curl -X POST \
   -H "Content-Type: application/json" \
-  -d '{"environment":"'${ENVIRONMENT}'","username":"'${DEPLOY_USER}'","repository":"'${REPOSITORY}'","revision":"'${COMMIT_SHA}'"}' \
+  -d '{"environment":"'"${ENVIRONMENT}"'","username":"'"${DEPLOY_USER}"'","repository":"'"${REPOSITORY}"'","revision":"'"${COMMIT_SHA}"'"}' \
   "https://airbrake.io/api/v4/projects/${PROJECT_ID}/deploys?key=${PROJECT_KEY}"
