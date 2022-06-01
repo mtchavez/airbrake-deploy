@@ -25,7 +25,7 @@
 #         id: airbrake-deploy
 #         with:
 #           project-key: ${{ secrets.AIRBRAKE_PROJECT_KEY }}
-#           repository: https://github.com${{ github.repo }}
+#           repository: https://github.com/${{ github.repository }}
 #           revision: ${{ github.sha }}
 #           user: ${{ github.actor }}
 #       - name: Get the deploy response

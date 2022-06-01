@@ -24,7 +24,7 @@ Example: `staging`
 
 **Required** Airbrake Project Repository.
 Can be set up in up in env `$AIRBRAKE_REPO`.
-Example: `https://github.com${{ github.repo }}`.
+Example: `https://github.com/${{ github.repository }}`.
 
 ### `revision`
 
@@ -52,7 +52,7 @@ with:
   project-id: ${{ env.AIRBRAKE_PROJECT_ID }}
   project-key: ${{ secret.AIRBRAKE_PROJECT_KEY }}
   environment: ${{ env.AIRBRAKE_ENVIRONMENT }}
-  repository: https://github.com${{ github.repo }}
+  repository: https://github.com/${{ github.repository }}
   revision: ${{ github.sha }}
   user: ${{ github.actor }}
 ```
