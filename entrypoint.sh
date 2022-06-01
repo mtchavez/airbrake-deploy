@@ -27,7 +27,7 @@ usage() {
   exit 1
 }
 
-if [[ -z $PROJECT_ID || -z $PROJECT_KEY || -z $ENVIRONMENT || -z $REPOSITORY || -z $DEPLOY_USER ]]; then
+if [ -z "$PROJECT_ID" ] || [ -z "$PROJECT_KEY" ] || [ -z "$ENVIRONMENT" ] || [ -z "$REPOSITORY" ] || [ -z "$DEPLOY_USER" ]; then
   echo "Missing required arguments!"
   usage
   exit 1
