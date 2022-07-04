@@ -47,7 +47,7 @@ The API response from Airbrake `{"id": "asdf1234asdf1234"}`
 ## Example usage
 
 ```yaml
-uses: actions/airbrake-deploy-github-action@v1
+uses: mtchavez/airbrake-deploy-github-action@v1
 with:
   project-id: ${{ env.AIRBRAKE_PROJECT_ID }}
   project-key: ${{ secret.AIRBRAKE_PROJECT_KEY }}
